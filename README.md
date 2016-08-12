@@ -1,24 +1,33 @@
-# README
+# Basic rails 5 application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application has responsive mobile view and navigation, twitter bootstrap, rails 5.0.0 and slim setup.
 
-Things you may want to cover:
+important features are:
 
-* Ruby version
+* ruby version 2.3.0
 
-* System dependencies
+* rails version 5.0.0
 
-* Configuration
+* always use this command for bundle during development in local machine:
 
-* Database creation
+    bundle install --without production
 
-* Database initialization
+* always use this command for bundle for production environmnet:
 
-* How to run the test suite
+    bundle install --without development test
+
+* Database creation and initialization:
+
+    bundle exec rake db:setup
+
+* How to run the test suite:
+
+    no test suite for now
 
 * Services (job queues, cache servers, search engines, etc.)
 
+    nothing yet
+
 * Deployment instructions
 
-* ...
+    nothing yet
