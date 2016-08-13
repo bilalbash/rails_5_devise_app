@@ -1,0 +1,43 @@
+= content_for :title do
+  = 'Registration'
+
+.text-center
+  h1 Register here
+
+.row
+  .col-lg-offset-3.col-lg-6.col-md-offset-3.col-md-6.col-sm-offset-2.col-sm-8.col-xs-12
+    .panel.panel-default
+      .panel-body
+        = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { role: 'form'}) do |f|
+
+          - unless resource.errors.empty?
+            .alert.alert-warning
+              = devise_error_messages!
+
+          .form-group
+            = f.label(:first_name)
+            = f.text_field(:first_name, autofocus: true, placeholder: 'First name', class: 'form-control')
+
+          .form-group
+            = f.label(:last_name)
+            = f.text_field(:last_name, placeholder: 'Last name', class: 'form-control')
+
+          .form-group
+            = f.label(:email)
+            = f.email_field(:email, placeholder: 'Hello@youremail.com', class: 'form-control')
+
+          .form-group
+            = f.label(:password)
+            - if @minimum_password_length
+              em= " (#{@minimum_password_length} characters minimum)"
+            = f.password_field(:password, autocomplete: 'off', placeholder: 'Password', class: 'form-control')
+
+          .form-group
+            = f.label(:password_confirmation)
+            = f.password_field(:password_confirmation, autocomplete: 'off', placeholder: 'Password confirmation', class: 'form-control')
+          = f.submit('Register', class: 'btn btn-primary btn-block')
+
+      .panel-footer
+        p
+          = 'Already Registered? Log In '
+          = link_to('here', new_user_session_path)

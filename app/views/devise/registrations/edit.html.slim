@@ -1,0 +1,54 @@
+= content_for :title do
+  = 'Settings'
+
+.text-center
+  h1 Settings
+
+.row
+  .col-lg-offset-3.col-lg-6.col-md-offset-3.col-md-6.col-sm-offset-2.col-sm-8.col-xs-12
+    .panel.panel-default
+      .panel-body
+        = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, role: 'form' }) do |f|
+
+          - unless resource.errors.empty?
+            .alert.alert-warning
+              = devise_error_messages!
+
+          .form-group
+            = f.label(:first_name)
+            = f.text_field(:first_name, autofocus: true, placeholder: 'First name', class: 'form-control')
+
+          .form-group
+            = f.label(:last_name)
+            = f.text_field(:last_name, placeholder: 'Last name', class: 'form-control')
+
+          .form-group
+            = f.label(:email)
+            = f.email_field(:email, placeholder: 'Hello@youremail.com', class: 'form-control')
+
+          - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+            .form-group= "Currently waiting confirmation for: #{resource.unconfirmed_email}"
+
+          .form-group
+            = f.label(:password)
+            i= ' (leave blank if you don\'t want to change it)'
+            - if @minimum_password_length
+              i= " (#{@minimum_password_length} characters minimum)"
+            = f.password_field(:password, autocomplete: 'off', placeholder: 'Password', class: 'form-control')
+
+
+          .form-group
+            = f.label(:password_confirmation)
+            = f.password_field(:password_confirmation, autocomplete: 'off', placeholder: 'Password confirmation', class: 'form-control')
+
+          .form-group
+            = f.label(:current_password)
+            i= ' (we need your current password to confirm your changes)'
+            = f.password_field(:current_password, autocomplete: 'off', placeholder: 'Current password', class: 'form-control')
+
+          = f.submit('Update', class: 'btn btn-primary btn-block')
+
+    h3 Cancel my account
+    p
+      = 'Unhappy? '
+      = button_to('Cancel my account', registration_path(resource_name), data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger btn-lg')

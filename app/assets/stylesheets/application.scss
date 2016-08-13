@@ -12,14 +12,13 @@
  *
  */
 
-// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
-// bootstrap-sprockets must be imported before bootstrap for the icon fonts to work.
+@import "lato/lato";
 
-// $navbar-default-bg: #312312;
-// $light-orange: #ff8c00;
-// $navbar-default-color: $light-orange;
-// You can override these variables by simply redefining the variable before the @import directive
+// change bootstrap variables here, before import directive
+$font-family-sans-serif:  "lato regular", lato, Arial, sans-serif !default;
+$font-size-base:          16px !default;
 
+// "bootstrap-sprockets" must be imported before "bootstrap", "bootstrap/custom" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap/custom";
 //@import "bootstrap/theme";

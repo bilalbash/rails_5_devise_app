@@ -1,0 +1,15 @@
+ul class="nav navbar-nav"
+  li= link_to('<span class="glyphicon glyphicon-home"></span> Home'.html_safe, root_path)
+  - if current_user
+    li= link_to('<span class="glyphicon glyphicon-lock"></span> Secret'.html_safe, secret_path)
+  - else
+    li= link_to('<span class="glyphicon glyphicon-phone-alt"></span> Contact'.html_safe, contact_path)
+    li= link_to('<span class="glyphicon glyphicon-user"></span> About'.html_safe, about_path)
+
+ul class="nav navbar-nav navbar-right"
+  - if current_user
+    li= link_to('<span class="glyphicon glyphicon-cog"></span> Settings'.html_safe, edit_user_registration_path)
+    li= link_to('<span class="glyphicon glyphicon-off"></span> Log out'.html_safe, destroy_user_session_path, method: 'delete')
+  - else
+    li= link_to('<span class="glyphicon glyphicon-log-in"></span> Login'.html_safe, new_user_session_path)
+    li= link_to('<span class="glyphicon glyphicon-saved"></span> Register'.html_safe, new_user_registration_path)

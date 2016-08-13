@@ -1,0 +1,8 @@
+/* BEGIN Regular */
+@font-face {
+  font-family: "Lato";
+  @include fontdef($FontPath, $FontName, $FontVersion, "regular");
+  font-weight: 400;
+  font-style: normal;
+}
+/* END Regular */
