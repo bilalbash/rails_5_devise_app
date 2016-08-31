@@ -18,7 +18,7 @@ important features are:
 
 ### Important instructions:
 
-* [strong parameters](https://github.com/plataformatec/devise#strong-parameters): if you add any new user attribute like I have added user first name and last name than you have to add those new attributes to permitted parameters configured inside application controller. 
+* [strong parameters](https://github.com/plataformatec/devise#strong-parameters): if you add any new user attribute like I have added user first name and last name than you have to add those new attributes to permitted parameters configured inside application controller.
 
 ### What have I missed:
 I have missed several devise features like email confirmation, reset password, forget password, email handling of devise. I will cover them in my next rails 5 basic application, coming soon IA.
@@ -29,7 +29,7 @@ I have missed several devise features like email confirmation, reset password, f
 
     bundle install --without production
 
-* always use this command for bundle for production environmnet:
+* always use this command for bundle for production environment:
 
     bundle install --without development test
 
