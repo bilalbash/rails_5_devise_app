@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.0'
+ruby '2.3.3'
 gem 'rails', '5.0.0'            # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'puma', '3.6.0'             # Use Puma as the app server
 gem 'sass-rails', '5.0.6'       # Use SCSS for stylesheets
@@ -19,7 +19,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'sqlite3'                 # Use sqlite3 as the database for Active Record
+  gem 'pg'                 # Use sqlite3 as the database for Active Record
   gem 'web-console'             # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'listen', '~> 3.0.5'
   gem 'spring'                  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
